@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  config: {
+    apiKey: 'lzwbh',
+    apiUrl: 'https://api.myjson.com/bins/',
+  }
 };

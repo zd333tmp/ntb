@@ -1,0 +1,8 @@
+<!-- TODO: markup and styles -->
+<ul *ngIf="notes && notes.length">
+  <li *ngFor="let note of notes; trackBy: trackNoteBy;"
+    [ngClass]="{'is-selected': getNoteIsSelected(note)}"
+    (click)="onNoteClick(note)">
+    {{note.caption}}
+  </li>
+</ul>

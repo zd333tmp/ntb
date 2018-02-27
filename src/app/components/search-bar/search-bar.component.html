@@ -1,0 +1,9 @@
+<!-- TODO: markup and styles -->
+<div>
+  <input type="text"
+    #inputElement
+    placeholder="Please Enter Keywords to Search By"
+    [value]="getInputValue()"
+    (input)="onInput(inputElement)"
+  >
+</div>

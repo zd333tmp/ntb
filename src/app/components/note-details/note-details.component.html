@@ -1,0 +1,57 @@
+<!-- TODO: markup and styles -->
+<div *ngIf="note">
+
+  <!-- Note caption -->
+  <div>
+    <input type="text"
+      placeholder="Enter Note Caption"
+      [disabled]="note.isSaved"
+      [value]="note.caption"
+      (input)="onCaptionInput($event)"
+    >
+  </div>
+
+  <!-- Note text -->
+  <div>
+    <textarea cols="30" rows="10"
+      [disabled]="note.isSaved"
+      (input)="onTextInput($event)"
+    >{{note.text}}</textarea>
+  </div>
+
+  <div>
+    <!-- Note keywords -->
+    <div>
+      <input type="text"
+        [disabled]="note.isSaved"
+        [value]="getKeywordsInputValue()"
+        (input)="onKeywordsInput($event)"
+      >
+    </div>
+
+    <!-- Note date -->
+    <div>
+      <!-- TODO: would be good to replace with datepicker -->
+      <input type="date"
+        [disabled]="note.isSaved"
+        [value]="getDateInputValue()"
+        (input)="onDateInput($event)"
+      >
+    </div>
+
+  </div>
+
+  <!-- Save, delete buttons -->
+  <div>
+    <button type="button"
+      *ngIf="!note.isSaved"
+      [disabled]="!allowSaveDelete"
+      (click)="onSaveClick()"
+    >Save</button>
+
+    <button type="button"
+      [disabled]="!allowSaveDelete"
+      (click)="onDeleteClick()"
+    >Delete</button>
+  </div>
+</div>
