@@ -14,9 +14,10 @@
   <!-- Note text -->
   <div>
     <textarea cols="30" rows="10"
+      [value]="note.text"
       [disabled]="note.isSaved"
       (input)="onTextInput($event)"
-    >{{note.text}}</textarea>
+    ></textarea>
   </div>
 
   <div>
